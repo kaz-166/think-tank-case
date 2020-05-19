@@ -6,7 +6,7 @@
 <div class="container">
   <div class="main-panel">
     <%= image_tag 'main.png', :size =>'160x180'%>
-    Please Wait.... Now, Under Consturcrion...
+    
   </div>
 
   <div class="main-panel">
@@ -27,12 +27,18 @@
   <div class="main-panel">
     <center>
     <h1>Proceed Dialy</h1>
+    Under Construction
     </center>
   </div>
 
-  <div class="main-panel">
-    <center>
+  <div class="post_list">
+  <center>
     <h1>Thinks</h1>
-    </center>
+  </center>
+    <% @posts.each do |p| %>
+    <%= image_tag(asset_path(decode_expresssion(p.expression)), :size => '80x80') %>
+    <%= p.content %>
+    <hr>
+    <% end %>
   </div>
 </div>

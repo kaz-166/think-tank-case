@@ -1,18 +1,22 @@
 class PostsController < ApplicationController
 
   def create
-    post_params[:expression] = get_expression(params)
     Post.create(post_params)
-    redirect_to show_path
+    Post.last.update(expression: encode_expression(params))
+    redirect_to page_path(1)
   end
 
   private
-    # ストロングパラメータの設定
+    # [Abstract] ストロングパラメータの設定
+    # [Projection] f: none -> params[]
     def post_params
       params.require(:post).permit(:user_id, :content, :expression)
     end
     
-    def get_expression(param_exp)
+    # [Abstract]   POST投稿時にどのボタンから押されたかを判定するメソッド
+    # [Projection] f: params[] -> Intetger
+    # [Caution]    nameタグで渡されたパラメータの座標の存在性で判定しているためやや強引な方法
+    def encode_expression(param_exp)
       if params["normal.x"] != nil
         0
       elsif params["happy.x"] != nil
