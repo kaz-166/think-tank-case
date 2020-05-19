@@ -4,4 +4,4 @@
 <br>
 
 内容
-<%= @articles.content %>
+<%= safe_join(@articles.content.split("\n"),tag(:br)) %>

@@ -17,13 +17,37 @@ header{
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 0.1fr 1fr;
+  grid-column-gap: 20px;
   
   h2{
     font-size: 20px;
     margin-top: 0px;
     margin-bottom: 0px;
+
   }
 }
 
 .main-panel{
+  h1{
+    color: #FFFFFF;
+    background-color: #000000;
+  }
+
+}
+
+.article-title{
+  font-size: 25px;
+}
+
+.think-list{
+  display: grid;
+  grid-template-columns: 0.15fr 1fr;
+}
+
+.think-content{
+  border: solid 2px;
+  border-radius: 5px;
+  border-color: #888888;
+  margin-top: auto;
+  margin-bottom: auto;
 }
