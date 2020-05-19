@@ -1,0 +1,23 @@
+// Place all the styles related to the page controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+header{
+  margin-top: 0;
+  background-color: #111111;
+  h1{
+    font-size: 80px;
+    color: #ffffff;
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+}
+
+.container{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+}
+
+.main-panel{
+}
