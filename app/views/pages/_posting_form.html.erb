@@ -1,0 +1,12 @@
+<center>
+<h2>Posting!</h2>
+<%= form_for(Post.new) do |f| %>
+  <%= f.text_area :content %>
+  <br>
+  <input class="button_expression" type="image" src=<%= asset_path 'normal.png' %> name="normal">
+  <input class="button_expression" type="image" src=<%= asset_path 'happy.png' %> name="happy">
+  <input class="button_expression" type="image" src=<%= asset_path 'angry.png' %> name="angry">
+  <input class="button_expression" type="image" src=<%= asset_path 'surprised.png' %> name="surprised">
+  <input class="button_expression" type="image" src=<%= asset_path 'confused.png' %> name="confused">
+<% end %>
+</center>

@@ -1,0 +1,15 @@
+<center>
+<h1>Proceedings</h1>
+Under Construction<br>
+<%= link_to("記事の作成", new_article_path) %>
+<br>
+<% @articles.each do |a| %>
+  <div class="article-title">
+  <strong><%= link_to(a.title, article_path(a.id)) %></strong>
+  </div>
+  <div class="article-edit">
+  <%= link_to("編集", edit_article_path(a.id)) %>
+  </div>
+  <hr>
+<% end %>
+</center>
