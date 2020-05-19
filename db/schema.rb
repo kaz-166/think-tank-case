@@ -18,6 +18,9 @@ ActiveRecord::Schema.define(version: 2020_05_19_062849) do
   end
 
   create_table "posts", force: :cascade do |t|
+    t.integer "user_id"
+    t.text "content"
+    t.integer "expression"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

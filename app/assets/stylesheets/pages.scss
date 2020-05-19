@@ -6,7 +6,7 @@ header{
   margin-top: 0;
   background-color: #111111;
   h1{
-    font-size: 80px;
+    font-size: 70px;
     color: #ffffff;
     margin-top: 0px;
     margin-bottom: 0px;
@@ -16,7 +16,7 @@ header{
 .container{
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
+  grid-template-rows: 0.4fr 1fr;
 }
 
 .main-panel{
