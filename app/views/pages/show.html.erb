@@ -6,7 +6,8 @@
 <div class="container">
   <div class="main-panel">
     <%= image_tag 'main.png', :size =>'160x180'%>
-    
+    corder name: mamutaroh
+    <%= link_to("新規プロジェクトを作成する", new_project_path) %>
   </div>
 
   <div class="main-panel">
@@ -27,7 +28,14 @@
   <div class="main-panel">
     <center>
     <h1>Proceed Dialy</h1>
-    Under Construction
+    Under Construction<br>
+    <%= link_to("記事の作成", new_article_path) %>
+    <br>
+    <% @articles.each do |a| %>
+      <%= link_to(a.title, article_path(a.id)) %>
+      <%= link_to("編集", edit_article_path(a.id)) %>
+      <br>
+    <% end %>
     </center>
   </div>
 

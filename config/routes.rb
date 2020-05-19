@@ -4,4 +4,6 @@ Rails.application.routes.draw do
   get '/', to: "pages#show"
   resources :posts
   resources :pages
+  resources :articles
+  resources :projects
 end
