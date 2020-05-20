@@ -43,6 +43,12 @@ header{
   font-size: 25px;
 }
 
+.article-content{
+  color: #414141;
+  font-family: 'Lato', 'Noto Sans JP', 'ヒラギノ角ゴ ProN', 'Hiragino Kaku Gothic ProN', 
+  'メイリオ', Meiryo, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
+}
+
 .think-list{
   display: grid;
   grid-template-columns: 0.15fr 1fr;

@@ -1,6 +1,6 @@
 module PostsHelper
     # [Abstract]   PostモデルのExpressionの値から画像のPathに変換するヘルパメソッド
-    # [Projection] f: Integer-> String
+    # [Projection] f: Integer -> String
     # [Caution]    nameタグで渡されたパラメータの座標の存在性で判定しているためやや強引な方法
     def decode_expresssion(exp)
         if exp == 0
@@ -20,7 +20,7 @@ module PostsHelper
     end
 
     # 0～9ならば先頭に文字0を付加するメソッド
-    # [Projection] f: Integer-> String
+    # [Projection] f: Integer -> String
     def add_prefix(num)
       if (num >= 0) && (num <= 9)
         "0" + num.to_s
