@@ -5,7 +5,8 @@
 header{
   // position: fixed;
   margin-top: 0;
-  background-color: #111111;
+  background: linear-gradient(-90deg, #50555a, #0c0c0c);
+  box-shadow: 4px 4px 4px rgba(0,0,0,0.6);
   h1{
     font-size: 70px;
     color: #ffffff;
@@ -30,8 +31,10 @@ header{
 
 .main-panel{
   h1{
+    box-shadow: 2px 2px 2px rgba(0,0,0,0.6);
+    margin-top: 0px;
     color: #FFFFFF;
-    background-color: #000000;
+    background: linear-gradient(-90deg, #50555a, #0c0c0c);
   }
 
 }
@@ -66,5 +69,23 @@ header{
     letter-spacing: 1.5px;
     font-family: 'Lato', 'Noto Sans JP', 'ヒラギノ角ゴ ProN', 'Hiragino Kaku Gothic ProN', 
     'メイリオ', Meiryo, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
+  }
+
+  img{
+    border-radius: 50%;
+    padding: 5px;
+    border: 3px solid #222222;
+  }
+}
+
+.prof-img{
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 5px;
+  margin-bottom: 0px;
+  img{
+    border-radius: 50%;
+    padding: 5px;
+    border: 18px solid #222222;
   }
 }

@@ -15,8 +15,10 @@
   margin-top: auto;
   margin-bottom: auto;
   h1{
+    box-shadow: 2px 2px 2px rgba(0,0,0,0.6);  
+    margin-top: 0px;
     color: #FFFFFF;
-    background-color: #000000;
+    background: linear-gradient(90deg, #50555a, #0c0c0c);
   }
 }
 
@@ -32,11 +34,14 @@
         margin-top: 0px;
         margin-bottom: 0px;
         font-size: 15px;
-        font-family: 'Lato', 'Noto Sans JP', 'ヒラギノ角ゴ ProN', 'Hiragino Kaku Gothic ProN', 'メイリオ', Meiryo, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
+        font-family: 'Lato', 'Noto Sans JP', 'ヒラギノ角ゴ ProN', 'Hiragino Kaku Gothic ProN', 
+        'メイリオ', Meiryo, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
     }
 }
 
 .button_expression{
+    border-radius: 50%;
+    border: 6px solid;
     width:  60px;
     height: 60px;
     margin-top: 2px;
