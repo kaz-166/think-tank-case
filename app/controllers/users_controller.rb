@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
 
+# [Abstract]   表示プロジェクトを切り替えるメソッド
 def switch_project
     project_id = Project.find_by(user_id: current_user.id, name: params[:switch]).id
     User.find(current_user.id).update(current_prj_id: project_id)

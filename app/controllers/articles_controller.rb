@@ -5,7 +5,7 @@ class ArticlesController < ApplicationController
     end
 
     def create
-        prj_id = Project.find_by(user_id: current_user).id
+        prj_id = User.find(current_user.id).current_prj_id
         Article.create(project_id: prj_id, title: article_params[:title], content: article_params[:content])
         redirect_to page_path(current_user.id)
     end
@@ -15,7 +15,7 @@ class ArticlesController < ApplicationController
     end
 
     def update
-        prj_id = Project.find_by(user_id: current_user).id
+        prj_id = User.find(current_user.id).current_prj_id
         @articles = Article.find(params[:id])
         Article.find(params[:id]).update(project_id: prj_id, title: article_params[:title], content: article_params[:content])
         redirect_to page_path(current_user.id)
