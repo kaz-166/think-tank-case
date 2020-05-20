@@ -9,4 +9,6 @@ Rails.application.routes.draw do
   resources :articles
   resources :projects
   post '/project/update', to: "users#switch_project"
+  get '*path', controller: 'application', action: 'routing_error'
+  get '*post', controller: 'application', action: 'routing_error'
 end
