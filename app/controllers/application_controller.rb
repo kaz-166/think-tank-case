@@ -5,12 +5,15 @@ class ApplicationController < ActionController::Base
 
     class Forbidden < ActionController::ActionControllerError; end
     class IpAddressRejected < ActionController::ActionControllerError; end
-    
+
     rescue_from Exception, with: :rescue500
     rescue_from ApplicationController::Forbidden, with: :rescue403
     rescue_from ApplicationController::IpAddressRejected, with: :rescue403
     rescue_from ActionController::RoutingError, with: :rescue404
     rescue_from ActiveRecord::RecordNotFound, with: :rescue404
+
+    # 本番環境ではBasic認証を行う
+    http_basic_authenticate_with :name => ENV['BASIC_AUTH_USERNAME'], :password => ENV['BASIC_AUTH_PASSWORD'] if Rails.env == "production"
 
     def routing_error
         raise ActionController::RoutingError, params[:path]
