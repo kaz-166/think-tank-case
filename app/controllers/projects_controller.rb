@@ -6,6 +6,9 @@ class ProjectsController < ApplicationController
 
     def create
         Project.create(name: project_params[:name], user_id: current_user.id)
+        # プロジェクト新規作成時はそのプロジェクトに切り替える
+        prj_id = Project.last.id
+        User.find(current_user.id).update(current_prj_id: prj_id)
         redirect_to page_path(current_user.id)
     end
 

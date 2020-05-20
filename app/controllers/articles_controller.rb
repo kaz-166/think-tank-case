@@ -6,7 +6,9 @@ class ArticlesController < ApplicationController
 
     def create
         prj_id = User.find(current_user.id).current_prj_id
-        Article.create(project_id: prj_id, title: article_params[:title], content: article_params[:content])
+        if prj_id.nil? == false
+            Article.create(project_id: prj_id, title: article_params[:title], content: article_params[:content])
+        end
         redirect_to page_path(current_user.id)
     end
 
@@ -16,8 +18,10 @@ class ArticlesController < ApplicationController
 
     def update
         prj_id = User.find(current_user.id).current_prj_id
-        @articles = Article.find(params[:id])
-        Article.find(params[:id]).update(project_id: prj_id, title: article_params[:title], content: article_params[:content])
+        if prj_id.nil? == false
+            @articles = Article.find(params[:id])
+            Article.find(params[:id]).update(project_id: prj_id, title: article_params[:title], content: article_params[:content])
+        end
         redirect_to page_path(current_user.id)
     end
 

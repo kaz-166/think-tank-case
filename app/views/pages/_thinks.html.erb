@@ -2,12 +2,14 @@
 <h1>Thinks</h1>
 </center>
 <div class="think-list">
-  <% @posts.each do |p| %>
-    <div>
-    <%= image_tag(asset_path(decode_expresssion(p.expression)), :size => '80x80') %>
-    </div>
-    <div class="think-content">
-    <%= safe_join(p.content.split("\n"),tag(:br)) %>
-    </div>
+  <% if @posts.nil? == false %>
+    <% @posts.each do |p| %>
+      <div>
+        <%= image_tag(asset_path(decode_expresssion(p.expression)), :size => '80x80') %>
+      </div>
+      <div class="think-content">
+        <%= safe_join(p.content.split("\n"),tag(:br)) %>
+      </div>
+    <% end %>
   <% end %>
 </div>
