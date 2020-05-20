@@ -4,6 +4,12 @@
     </div>
     <div class="profile">
         <p>coder name: <strong>mamutaloh</strong></p>
+        <% if @user.github_link.nil? == false %>
+          <%= link_to image_tag('github-logo.png', :size => '40x40'), 'https://github.com/' + @user.github_link %>
+        <% end %>
+        <% if @user.qiita_link.nil? == false %>
+          <%= link_to image_tag('qiita-logo.png', :size => '40x40'), 'https://qiita.com/' + @user.qiita_link %>
+        <% end %>
         <% if @project.nil? == false %>
         <p>Project name: <strong><%= @project.name %></strong></p>
         プロジェクトの切り替え
