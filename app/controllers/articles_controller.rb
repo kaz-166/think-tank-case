@@ -1,12 +1,13 @@
 class ArticlesController < ApplicationController
-
+    before_action :authenticate_user!
     def new
         @articles = Article.new
     end
 
     def create
-        Article.create(project_id: 1, title: article_params[:title], content: article_params[:content])
-        redirect_to page_path(1)
+        prj_id = Project.find_by(user_id: current_user).id
+        Article.create(project_id: prj_id, title: article_params[:title], content: article_params[:content])
+        redirect_to page_path(current_user.id)
     end
 
     def show
@@ -14,9 +15,10 @@ class ArticlesController < ApplicationController
     end
 
     def update
+        prj_id = Project.find_by(user_id: current_user).id
         @articles = Article.find(params[:id])
-        Article.find(params[:id]).update(project_id: 1, title: article_params[:title], content: article_params[:content])
-        redirect_to page_path(1)
+        Article.find(params[:id]).update(project_id: prj_id, title: article_params[:title], content: article_params[:content])
+        redirect_to page_path(current_user.id)
     end
 
     def edit
@@ -24,6 +26,8 @@ class ArticlesController < ApplicationController
     end
 
     def destroy
+        Article.find(params[:id]).destroy
+        redirect_to page_path(current_user.id)
     end
 
     private

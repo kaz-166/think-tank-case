@@ -1,9 +1,10 @@
 class PostsController < ApplicationController
+  before_action :authenticate_user!
 
   def create
-    Post.create(post_params)
+    Post.create(user_id: current_user.id, content: post_params[:content])
     Post.last.update(expression: encode_expression(params))
-    redirect_to page_path(1)
+    redirect_to page_path(current_user.id)
   end
 
   private

@@ -9,6 +9,7 @@ Under Construction<br>
   </div>
   <div class="article-edit">
   <%= link_to("編集", edit_article_path(a.id)) %>
+  <%= link_to("削除", article_path(a.id), :method => :delete) %>
   </div>
   <hr>
 <% end %>

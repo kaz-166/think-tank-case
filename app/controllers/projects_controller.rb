@@ -5,8 +5,8 @@ class ProjectsController < ApplicationController
     end
 
     def create
-        Project.create(project_params)
-        redirect_to page_path(1)
+        Project.create(name: project_params[:name], user_id: current_user.id)
+        redirect_to page_path(current_user.id)
     end
 
     def destroy
