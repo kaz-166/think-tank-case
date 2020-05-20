@@ -1,6 +1,5 @@
 <center>
 <h1>Proceedings</h1>
-Under Construction<br>
 <%= link_to("記事の作成", new_article_path) %>
 <br>
 <% if @articles.nil? == false %>
@@ -14,5 +13,6 @@ Under Construction<br>
     </div>
     <hr>
   <% end %>
+  <%= paginate(@articles) %>
 <% end %>
 </center>
