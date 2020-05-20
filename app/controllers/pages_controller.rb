@@ -3,7 +3,10 @@ class PagesController < ApplicationController
 
   def show
     @posts = User.find(current_user.id).posts.all.order(id: "DESC")
-    @articles = User.find(current_user.id).projects.last.articles.all
+    @user = User.find(current_user.id)
+    current_project_id = @user.current_prj_id
+    @project = @user.projects.find(current_project_id)
+    @articles = @project.articles.all
   end
 
 end

@@ -8,4 +8,5 @@ Rails.application.routes.draw do
   resources :pages
   resources :articles
   resources :projects
+  post '/project/update', to: "users#switch_project"
 end
