@@ -9,7 +9,13 @@
       </div>
       <div class="think-content">
         <%= safe_join(p.content.split("\n"),tag(:br)) %>
+        <br>
+        <% t = p.created_at %>
+        <div class="posted-time">
+        <%= "Posted at " + t.year.to_s + "年" + t.month.to_s + "月" + t.day.to_s + "日 " + t.hour.to_s + ":" + add_prefix(t.min) %>
+        </div>
       </div>
     <% end %>
+  <%= paginate(@posts) %>
   <% end %>
 </div>

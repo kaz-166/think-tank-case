@@ -18,4 +18,14 @@ module PostsHelper
             'normal.png'
           end 
     end
+
+    # 0～9ならば先頭に文字0を付加するメソッド
+    # [Projection] f: Integer-> String
+    def add_prefix(num)
+      if (num >= 0) && (num <= 9)
+        "0" + num.to_s
+      else
+        num.to_s
+      end
+    end
 end

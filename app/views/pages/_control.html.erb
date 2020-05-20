@@ -1,0 +1,20 @@
+<div class="control-container">
+    <div>
+        <%= image_tag(asset_path('prof.png'), :size => '200x200') %>
+    </div>
+    <div class="profile">
+        <p>coder name: <strong>mamutaloh</strong></p>
+        <% if @project.nil? == false %>
+        <p>Project name: <strong><%= @project.name %></strong></p>
+        プロジェクトの切り替え
+        <%= form_tag('/project/update', method: :post) do %>
+            <%= select_tag(:switch, options_for_select(array_of_project_name(@user.projects.all))) %>
+            <%= submit_tag "変更" %>
+        <% end %>
+        <% else %>
+        プロジェクトがありません
+        <% end %>
+        <br>
+        <%= link_to("新規プロジェクトを作成する", new_project_path) %>
+    </div>
+</div>

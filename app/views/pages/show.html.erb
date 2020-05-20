@@ -1,31 +1,6 @@
 <div class="container">
-  <div class="main-panel">
-    coder name: <strong>mamutaloh</strong>
-    <br>
-    <% if @project.nil? == false %>
-      Project name: <strong><%= @project.name %></strong>
-      <br>
-      プロジェクトの切り替え
-      <%= form_tag('/project/update', method: :post) do %>
-        <%= select_tag(:switch, options_for_select(array_of_project_name(@user.projects.all))) %>
-        <%= submit_tag "変更" %>
-      <% end %>
-    <% else %>
-    プロジェクトがありません
-    <% end %>
-    <br>
-    <%= link_to("新規プロジェクトを作成する", new_project_path) %>
-  </div>
-
-  <div class="main-panel">
-    <%= render('posting_form') %>
-  </div>
-
-  <div class="main-panel">
-    <%= render('proceedings') %>
-  </div>
-  
-  <div class="post_list">
-    <%= render('thinks') %>
-  </div>
+  <div class="main-panel"><%= render('control') %></div>
+  <div class="main-panel"><%= render('posting_form') %></div>
+  <div class="main-panel"><%= render('proceedings') %></div>
+  <div class="post_list"> <%= render('thinks') %></div>
 </div>
