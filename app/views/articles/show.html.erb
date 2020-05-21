@@ -1,7 +1,9 @@
-タイトル
+<div class="article-detail">
+<h2>
 <%= @articles.title %>
+</h2>
 
-<br>
-
-内容
+<hr>
+<div id="article-content">
 <%= safe_join(@articles.content.split("\n"),tag(:br)) %>
+</div>
