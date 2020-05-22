@@ -5,5 +5,5 @@
 
 <hr>
 <div id="article-content">
-<%= safe_join(@articles.content.split("\n"),tag(:br)) %>
+<%= markdown2html(safe_join(@articles.content.split("\n"),tag(:br))).html_safe %>
 </div>

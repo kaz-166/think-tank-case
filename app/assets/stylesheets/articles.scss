@@ -25,4 +25,19 @@
   'メイリオ', Meiryo, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
 }
 
+.article-markdown{
+    background: #FFFFFF;
+    h1{
+        background: #FFFFFF !important;
+        font-size: 20px !important;
+        color: #333333 !important;
+        box-shadow: none !important;
+    }
+    h2{
+        background: #FFFFFF !important;
+        font-size: 16px !important;
+        color: #333333 !important;
+    }
+}
+
 
