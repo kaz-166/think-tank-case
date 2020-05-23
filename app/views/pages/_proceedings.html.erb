@@ -4,17 +4,23 @@
 <br>
 <% if @articles.nil? == false %>
   <% @articles.each do |a| %>
-    <div class="article-title">
-      <strong><%= link_to(a.title, article_path(a.id)) %></strong>
+    <div class="article">
+      <div class="article-title">
+        <strong><%= link_to(a.title, article_path(a.id)) %></strong>
+      </div>
+      <div class="article-content">
+        <%= markdown2html(safe_join(article_subset(a.content, 3).split("\n"),tag(:br))).html_safe %>
+      </div>
+      <div class="article-edit">
+        <%= link_to("編集", edit_article_path(a.id)) %>
+        <%= link_to("削除", article_path(a.id), :method => :delete,
+        title: '記事を削除',
+        data: { confirm: '記事を削除しますか？',
+        commit: 'Destroy',
+        cancel: 'Cancel'}) %>
+      </div>
+      <hr>
     </div>
-    <div class="article-content">
-      <%= markdown2html(safe_join(article_subset(a.content, 3).split("\n"),tag(:br))).html_safe %>
-    </div>
-    <div class="article-edit">
-      <%= link_to("編集", edit_article_path(a.id)) %>
-      <%= link_to("削除", article_path(a.id), :method => :delete) %>
-    </div>
-    <hr>
   <% end %>
   <%= paginate(@articles) %>
 <% end %>

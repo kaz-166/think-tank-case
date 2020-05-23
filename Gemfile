@@ -60,6 +60,8 @@ gem 'rails_admin'
 gem 'cancancan'
 gem 'kaminari'
 gem 'config'
+gem 'jquery-rails'
+gem 'data-confirm-modal'
 
 group :production do
   gem 'pg'

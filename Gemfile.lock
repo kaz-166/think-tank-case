@@ -77,6 +77,8 @@ GEM
       deep_merge (~> 1.2, >= 1.2.1)
       dry-validation (~> 1.0, >= 1.0.0)
     crass (1.0.6)
+    data-confirm-modal (1.6.3)
+      railties (>= 3.0)
     deep_merge (1.2.1)
     devise (4.7.1)
       bcrypt (~> 3.0)
@@ -310,9 +312,11 @@ DEPENDENCIES
   capybara (>= 2.15)
   coffee-rails (~> 4.2)
   config
+  data-confirm-modal
   devise
   duktape
   jbuilder (~> 2.5)
+  jquery-rails
   kaminari
   pg
   puma (~> 3.11)
