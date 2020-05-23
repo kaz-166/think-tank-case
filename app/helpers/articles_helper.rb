@@ -36,6 +36,11 @@ module ArticlesHelper
         s[i].gsub!("## ", "<h2>")
         s[i] += "</h2>"
         s_out += s[i]
+      # "[name](url) リンクつきテキスト"
+      # http://もしくはhttps://から始まる文字列をリンクと認識
+      elsif /https?:\/\/\w+/.match?(s[i])
+        s[i] = "<a href=\"" + s[i] + "\">" + s[i] + "</a>"
+        s_out += s[i]
       else
         s_out += s[i]
         s_out += "<br>"
